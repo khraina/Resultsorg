@@ -56,6 +56,14 @@ def profile():
 
     return render_template('profile.html')
 
-  
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+    if request.method == 'POST':
+        return redirect(url_for('download'))
+
+    return render_template('upload.html')
+
+
+
 if __name__ == "__main__":
   app.run(host="0.0.0.0", debug=True)
