@@ -1,4 +1,4 @@
-import os
+
 from flask import Flask,render_template,request,session,redirect,url_for,g
 
 
@@ -58,6 +58,15 @@ def profile():
         return redirect(url_for('login'))
 
     return render_template('profile.html')
+
+
+@app.route("/about_us")
+def aboutus():
+  return render_template('about.html')
+
+@app.route("/view")
+def views():
+  return render_template('view.html')
 
       
 if __name__ == "__main__":
