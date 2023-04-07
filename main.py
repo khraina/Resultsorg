@@ -1,5 +1,6 @@
+from flask import Flask,render_template,request,session,redirect,url_for,g,flash
+from flask_sqlalchemy import SQLAlchemy
 
-from flask import Flask,render_template,request,session,redirect,url_for,g
 
 
 
@@ -21,6 +22,9 @@ users.append(User(id=2, username='Soumya', password='123'))
 
 app = Flask(__name__)
 app.secret_key = 'somesecretkeythatonlyishouldknow'
+
+
+
 
 @app.route("/")
 def home():
@@ -67,6 +71,10 @@ def aboutus():
 @app.route("/view")
 def views():
   return render_template('view.html')
+
+@app.route("/logins",methods=['GET','POST'])
+def logins():
+  return render_template('logins.html',boolean=True)
 
       
 if __name__ == "__main__":
