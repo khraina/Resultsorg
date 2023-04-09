@@ -1,6 +1,14 @@
 from flask import Flask,render_template,request,session,redirect,url_for,g,flash
 from flask_sqlalchemy import SQLAlchemy
+import json
+import pymysql
+import pandas as pd
+from datetime import datetime
+from os import path
 
+
+db = SQLAlchemy()
+DB_NAME = "database.db"
 
 
 
@@ -22,6 +30,8 @@ users.append(User(id=2, username='Soumya', password='123'))
 
 app = Flask(__name__)
 app.secret_key = 'somesecretkeythatonlyishouldknow'
+app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///students.sqlite3'
+db = SQLAlchemy(app)
 
 
 

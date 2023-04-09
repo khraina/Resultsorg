@@ -10,6 +10,8 @@ Flask = "^2.2.3"
 tools = "^0.1.9"
 Flask-SQLAlchemy = "^3.0.3"
 Flask-Login = "^0.6.2"
+pymysql = "^1.0.3"
+pandas = "^2.0.0"
 
 [tool.poetry.dev-dependencies]
 
